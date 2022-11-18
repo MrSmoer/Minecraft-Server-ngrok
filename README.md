@@ -12,7 +12,7 @@ The IP of the server is going to be visible on http://localhost:4040 on the ngro
 ### Minecraft
 The version is currently 1.19.2. You can replace the link in the Dockerfile for another version of the server.jar. <br>
 The server.jar is downloaded from Minecraft.net during build. <br>
-It is available through ngrok, as well as on `localhost:5565`
+You can acces the server through ngrok, as well as on `localhost:5565`
 
 After the obligatory first failed start you will need to enable the minecraft eula by editing the file `minecraft-data/eula.txt` inside the volume. 
 
