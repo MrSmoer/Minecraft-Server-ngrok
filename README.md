@@ -14,12 +14,11 @@ The version is currently 1.19.2. You can replace the link in the Dockerfile for 
 The server.jar is downloaded from Minecraft.net during build. <br>
 You can acces the server through ngrok, as well as on `localhost:5565`
 
-After the obligatory first failed start you will need to enable the minecraft eula by editing the file `minecraft-data/eula.txt` inside the volume. 
-
-Alternatively you can run
-```sudo echo eula=true > minecraft-data/eula.txt``` 
- 
- You can also set `eula=true` in the environment section of the compose.
+After the obligatory first failed start you will need to accept the minecraft eula. There are multiple ways that do the same:<br>
+<br>
+- edit `minecraft-data/eula.txt` inside the volume. 
+- run ```sudo echo eula=true > minecraft-data/eula.txt``` 
+- or set `eula=true` in the environment section of the compose.
 
 The minecraft-data is an ordinary minecraft-server-folder
 ## TLDR
