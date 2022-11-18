@@ -5,7 +5,7 @@ services:
     volumes:
       - ./minecraft-data:/minecraft-server/data
     ports:
-      - 25:25565
+      - 25566:25565
     environment:
       - eula=false
     depends_on: 
