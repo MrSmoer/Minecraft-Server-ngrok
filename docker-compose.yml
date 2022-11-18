@@ -1,5 +1,4 @@
 version: "3.9"
-
 services:
   minecraft:
     build: ./minecraft
@@ -7,6 +6,8 @@ services:
       - ./minecraft-data:/minecraft-server/data
     ports:
       - 25:25565
+    environment:
+      - eula=false
     depends_on: 
       - ngrok
 
@@ -16,6 +17,6 @@ services:
       - NGROK_AUTHTOKEN
     command: 'tcp minecraft:25565'
     ports:
-      - 65465:4040
+      - 4040:4040
 
 
