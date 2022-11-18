@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  minecraft:
+    build: ./minecraft
+    volumes:
+      - ./minecraft-data:/minecraft-server/data
+    ports:
+      - 25:25565
+    depends_on: 
+      - ngrok
+
+  ngrok:
+    image: ngrok/ngrok
+    environment:
+      - NGROK_AUTHTOKEN
+    command: 'tcp minecraft:25565'
+    ports:
+      - 65465:4040
+
+
