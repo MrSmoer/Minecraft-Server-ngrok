@@ -1,5 +1,4 @@
-# MinecraftWdaBoyzz
-
+# Minecraft-Server-ngrok
 This a simple docker-compose for quickly spinning up a minecraft-server with ngrok.
 
 ## Instructions
