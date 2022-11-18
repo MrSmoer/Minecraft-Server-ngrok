@@ -1,7 +1,9 @@
 FROM alpine:latest
 RUN apk add openjdk17
 RUN mkdir /minecraft-server/jar -p
-RUN wget https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
+ARG JAR_DOWNLOAD_LINK
+ENV JAR_DOWNLOAD_LINK ${JAR_DOWNLOAD_LINK}
+RUN wget ${JAR_DOWNLOAD_LINK} -O server.jar
 RUN mv server.jar /minecraft-server/jar
 WORKDIR /minecraft-server/data
 COPY entrypoint.sh /minecraft-server/jar/entrypoint.sh
