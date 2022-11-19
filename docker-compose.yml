@@ -3,7 +3,7 @@ services:
   minecraft:
     build: 
       context: ./minecraft
-      args: #1.19.2
+      args: 
         MINECRAFT_VERSION: 1.19.2
     volumes:
       - ./minecraft-data:/minecraft-server/data
