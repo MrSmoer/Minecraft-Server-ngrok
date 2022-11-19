@@ -10,7 +10,7 @@ This compose uses two containers, one provides ngrok tunneling to avoid port-for
 You will need to set `NGROK_AUTHTOKEN` to your ngrok-auth-token. You can also specify it in your compose file.
 The IP of the server is going to be visible on http://localhost:4040 on the ngrok status-page.
 ### Minecraft
-The version is currently 1.19.2. You can replace the link in the docker-compose with another version of the server.jar. [Here is a list](jarfiles.txt) <br>
+The version is currently 1.19.2. You can replace the link in the docker-compose with another version of the server.jar. [Here is a list](minecraft/versions.csv) <br>
 Currently, the server.jar is downloaded from Minecraft.net during build. <br>
 You can acces the server through ngrok, as well as on `localhost:25565`
 
