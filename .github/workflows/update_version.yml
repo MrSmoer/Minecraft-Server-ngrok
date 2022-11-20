@@ -24,6 +24,7 @@ jobs:
         python scripts/updateServerVersions.py
         
     - name: Commit files  # transfer the new html files back into the repository
+      if: 'git diff --exit-code' 
       run: |
         git config --local user.name  ${{ github.actor }}
         git add ./minecraft/versions.csv
