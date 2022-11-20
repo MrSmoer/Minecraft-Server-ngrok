@@ -22,14 +22,21 @@ jobs:
     - name: Run updateScript
       run: |
         python scripts/updateServerVersions.py
-        
+    - name: check for changes
+      run: |
+        if git diff --exit-code; then
+          echo "::set-env name=changes_exist::false"
+        else
+          echo "::set-env name=changes_exist::true"
+        fi 
     - name: Commit files  # transfer the new html files back into the repository
-      if: 'git diff --exit-code' 
+      if: ${{ env.changes_exist == 'true' }} 
       run: |
         git config --local user.name  ${{ github.actor }}
         git add ./minecraft/versions.csv
         git commit -m "Updating the version.csv"
     - name: Push changes  # push the output folder to your repo
+      if: ${{ env.changes_exist == 'true' }}
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
