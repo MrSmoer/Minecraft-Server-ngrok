@@ -34,7 +34,7 @@ jobs:
       run: |
         git config --local user.name  ${{ github.actor }}
         git add ./minecraft/versions.csv
-        git commit -m "Updating the version.csv"
+        git commit -m "Workflow updating the version.csv"
     - name: Push changes  # push the output folder to your repo
       if: ${{ env.changes_exist == 'true' }}
       uses: ad-m/github-push-action@master
