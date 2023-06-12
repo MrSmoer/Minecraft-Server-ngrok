@@ -32,7 +32,7 @@ jobs:
     - name: Commit files  # transfer the new html files back into the repository
       if: ${{ env.changes_exist == 'true' }} 
       run: |
-        git config --local user.name  ${{ github.actor }}
+        git config --global user.name "${GITHUB_ACTOR}"
         git add ./minecraft/versions.csv
         git commit -m "Workflow updating the version.csv"
     - name: Push changes  # push the output folder to your repo
